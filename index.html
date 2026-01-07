@@ -1,60 +1,70 @@
-
-<style>
-
-
-
-.imagemfundo {
-background-image: url("imagens/images.jpg");
-      border-width: 2px;
-      border-style: solid;
-      border-color: black;
-
-
-}
-
-
-/*
-    /* Define a imagem (coloque o nome do seu arquivo ou o link da imagem) */
-    background-image: url('sua-imagem.jpg');
-
-    /* Garante que a imagem cubra todo o espaço da div sem distorcer */
-    background-size: cover;
-
-    /* Centraliza a imagem */
-    background-position: center;
-
-    /* Define uma altura para a div, senão ela pode ficar "esmagada" */
-    height: 400px; 
-    
-    /* Centraliza o texto que estiver dentro da div */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white; /* Cor do texto */
-    
-    
-}
-
-*/
-
-</style>
-
-
-
-
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagens/IMG_2.png" type="image/x-icon">
+    <title>EG no trabalo</title>
+<style>
+#conteudo {
+   background-color:#FFDD0F;
+   border-width: 2px;
+   border-style: solid;
+   border-color: black;
+
+}
+.cabecalho {
+   display: flex;
+   justify-content: flex-start;
+/* flex-direction: coumn; */
+/* background-image: url("imagens/images.jpg"); */
+   background-color: #FF0000; 
+   background-size: cover;
+ /*  height: 80px; */
+   color: white;
+   border-width: 2px;
+   border-style: solid;
+   border-color: black;
+
+}
+.logotipo {
+   float: left;
+   margin-right: 10px;
+   margin-top: 10px;
+   width: 200px;
+
+    border: 2px solid #000000
+}
+.sala-cliente {
+    float: right;
+    margin-top: 10px;
+    width: 120px;
+   
+
+    border: 2px solid #000000
+}
+</style>
+
+</head>
 <body>
 
-<div class="imagemfundo">
-  <h1>Bem-vindo ao meukk site</h1>
+
+
+<div id="conteudo">
+<header class="cabecalho">
+<div class="logotipo">
+<img src="imagens/logo.png" width="200" alt="EG no trabalho">
 </div>
-
-<img src="⁵66666" alt="DESCRIÇÃO_DA_IMAGEM" width="100%">
-
-
-
-</body>
-</head>
+<div class="sala-cliente">
+<img src="imagens/logo.png9" width="120" alt="EG no trabalho">
+</div>
+</header>
+<main style="padding: 20px;">
+Para adicionar um fundo colorido a um elemento div em HTML, você usará a propriedade background-color em CSS.
+Existem duas maneiras principais de fazer isso:
+1. Usando CSS Inline (diretamente na tag HTML)
+Esta é a maneira mais rápida para uma mudança pontual:
+</main>
+</div>
+    </body>
 </html>
