@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="imagens/IMG_2.png" type="image/x-icon">
     <title>EG no trabalo</title>
+   <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuMGFhbAuN2Hj1TfQ0jQ4kG2A2h1h6/k8vW6T8e4j6R6jQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
 <style>
 #conteudo {
    background-color:#FFDD0F;
@@ -13,36 +17,151 @@
    border-color: black;
 
 }
-.cabecalho {
-   display: flex;
-   justify-content: flex-start;
-/* flex-direction: coumn; */
-/* background-image: url("imagens/images.jpg"); */
-   background-color: #FF0000; 
-   background-size: cover;
- /*  height: 80px; */
-   color: white;
-   border-width: 2px;
-   border-style: solid;
-   border-color: black;
-
+ .cabecalho {
+  display: flex;
+  flex-direction: column; /* Coloca o topo acima da busca */
+  background-color: #FF0000;
+  padding: 4px;
+  color: white;
+  border: 2px solid black;
+  gap: 10px; /* Espaço entre o topo e a lupa */
 }
-.logotipo {
-   float: left;
-   margin-right: 10px;
-   margin-top: 10px;
-   width: 200px;
 
-    border: 2px solid #000000
+.topo-header {
+  display: flex;
+  justify-content: space-between; /* Logo na esquerda, Sala na direita */
+  align-items: center;
+  width: 100%;
 }
+
 .sala-cliente {
-    float: right;
-    margin-top: 10px;
-    width: 120px;
-   
-
-    border: 2px solid #000000
+  display: flex;
+  gap: 10px; /* Espaço entre perfil e carrinho */
+    border: 2px solid #000000;
 }
+
+/* Removido todos os floats, agora usamos flexbox */
+.logotipo, .perfil, .carrinho {
+  border: 2px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Lupa de pesquisa ocupando 100% */
+.search-container {
+  display: flex;
+  width: 100%; /* Garante que o container da busca ocupe tudo */
+  align-items: center;
+  gap: 5px;
+}
+
+.search-input {
+  flex-grow: 1;
+  width: 100%;
+  
+  /* Ajustes de altura para ficar "fininho" */
+  height: 32px;       /* Altura total igual ao botão */
+  max-height: 32px;   /* Garante que ele não cresça */
+  padding: 0 15px;    /* 0 em cima/baixo e 15px nas laterais */
+  line-height: 32px;  /* Centraliza o texto verticalmente na altura de 32px */
+  
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box; /* Fundamental: inclui a borda e o padding no cálculo da altura */
+}
+
+
+.search-button {
+  background-color: #ff4757;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Impede o botão de esmagar */
+}
+   /* produtos */
+   
+  /* Container que segura todos os produtos */
+main {
+  display: grid;
+  gap: 5px; /* Espaço entre as caixinhas */
+  padding: 2px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Celular em pé (Portrait): 2 colunas */
+@media (orientation: portrait) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Celular deitado (Landscape): 4 colunas */
+@media (orientation: landscape) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Ajustes na Caixa do Produto */
+.caixa-produto {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; /* Agora ela ocupa o espaço da grade */
+  background-color: #f9f9f9;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.item {
+  padding: 8px; /* Reduzi um pouco para caber melhor em telas pequenas */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px; /* Ajuste de fonte para não quebrar o layout */
+}
+
+/* Campos de 100% de largura dentro da caixa */
+.foto-produto, .nome {
+  width: 100%;
+}
+
+.foto-produto {
+  padding: 0;
+  height: 120px; /* Ajustado para telas menores */
+  background-color: #fff;
+}
+
+.foto-produto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Campos de 50% de largura dentro da caixa */
+.estoque, .quantidade, .frete, .comentario {
+  width: 50%;
+}
+
+.nome {
+  background-color: #eee;
+  font-weight: bold;
+}
+
+   
 </style>
 
 </head>
@@ -52,18 +171,94 @@
 
 <div id="conteudo">
 <header class="cabecalho">
-<div class="logotipo">
-<img src="imagens/logo.png" width="200" alt="EG no trabalho">
-</div>
-<div class="sala-cliente">
-<img src="imagens/logo.png9" width="120" alt="EG no trabalho">
-</div>
+  <div class="topo-header">
+    <div class="logotipo">
+      <img src="imagens/logo.png" width="190" alt="Logo">
+    </div>
+
+    <div class="sala-cliente">
+      <div class="perfil">
+        <img src="imagens/perfil.png" width="25" alt="Perfil">
+      </div>
+      <div class="carrinho">
+        <img src="imagens/carrinho.png" width="25" alt="Carrinho">
+      </div>
+    </div>
+  </div>
+
+  <div class="search-container">
+    <input type="text" class="search-input" placeholder="Pesquisar...">
+    <button class="search-button">🔍</button>
+  </div>
 </header>
-<main style="padding: 20px;">
-Para adicionar um fundo colorido a um elemento div em HTML, você usará a propriedade background-color em CSS.
-Existem duas maneiras principais de fazer isso:
-1. Usando CSS Inline (diretamente na tag HTML)
-Esta é a maneira mais rápida para uma mudança pontual:
+   
+   
+<main>
+ 
+  <div class="caixa-produto">
+    <div class="item foto-produto">
+      <img src="imagens/images2.jpg" alt="Foto">
+    </div>
+    <div class="item estoque">Estoque</div>
+    <div class="item quantidade">Qtd</div>
+    <div class="item nome">Nome do Produto</div>
+    <div class="item frete">Frete</div>
+    <div class="item comentario">Coment.</div>
+  </div>
+
+ <div class="caixa-produto">
+    <div class="item foto-produto">
+      <img src="imagens/images2.jpg" alt="Foto">
+    </div>
+    <div class="item estoque">Estoque</div>
+    <div class="item quantidade">Qtd</div>
+    <div class="item nome">Nome do Produto</div>
+    <div class="item frete">Frete</div>
+    <div class="item comentario">Coment.</div>
+  </div>
+  
+  
+   <div class="caixa-produto">
+    <div class="item foto-produto">
+      <img src="imagens/images2.jpg" alt="Foto">
+    </div>
+    <div class="item estoque">Estoque</div>
+    <div class="item quantidade">Qtd</div>
+    <div class="item nome">Nome do Produto</div>
+    <div class="item frete">Frete</div>
+    <div class="item comentario">Coment.</div>
+  </div>
+  
+  
+   <div class="caixa-produto">
+    <div class="item foto-produto">
+      <img src="imagens/images2.jpg" alt="Foto">
+    </div>
+    <div class="item estoque">Estoque</div>
+    <div class="item quantidade">Qtd</div>
+    <div class="item nome">Nome do Produto</div>
+    <div class="item frete">Frete</div>
+    <div class="item comentario">Coment.</div>
+  </div>
+  
+   <div class="caixa-produto">
+    <div class="item foto-produto">
+      <img src="imagens/images2.jpg" alt="Foto">
+    </div>
+    <div class="item estoque">Estoque</div>
+    <div class="item quantidade">Qtd</div>
+    <div class="item nome">Nome do Produto</div>
+    <div class="item frete">Frete</div>
+    <div class="item comentario">Coment.</div>
+  </div>
+  
+  
+  
+   
+   
+   
+  
+   
 </main>
 </div>
     </body>
