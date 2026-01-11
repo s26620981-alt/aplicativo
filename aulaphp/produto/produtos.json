@@ -1,0 +1,20 @@
+[
+  {
+    "nome": "Produto Exemplo 1",
+    "estoque": "Sim",
+    "quantidade": "10",
+    "imagem": "imagens/images2.jpg",
+    "frete": "Grátis",
+    "comentario": "10 ctr"
+  },
+  {
+    "nome": "Produto Exemplo 2",
+    "estoque": "Não",
+    "quantidade": "0",
+    "foto": "imagens/produto2.jpg",
+    "frete": "R$ 15,00",
+    "comentario": "Esgotado"
+  }
+]
+
+
